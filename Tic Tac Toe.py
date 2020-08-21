@@ -1,3 +1,5 @@
+import sys
+
 theBoard = {'7': ' ', '8': ' ', '9': ' ',
             '4': ' ', '5': ' ', '6': ' ',
             '1': ' ', '2': ' ', '3': ' '}
@@ -27,7 +29,7 @@ def game():
     print('Write the number to place your move in that position.')
     print('X will start the game. O will play the next move.\n')
 
-    for i in range(10):
+    for _ in range(sys.maxsize**10):
         printBoard(theBoard)
         print("It's your turn, " + turn + ". Move in which place?")
 
@@ -37,7 +39,7 @@ def game():
             theBoard[move] = turn
             count += 1
         else:
-            print("That place is already filled.\nPlease select an empty place.\nMove in which place?")
+            print("That place is already filled.\nPlease select an empty place.")
             continue
 
         if count >= 5:
